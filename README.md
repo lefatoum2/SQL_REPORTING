@@ -60,3 +60,4 @@ GROUP BY season, country
 ORDER BY events DESC;
 ```
 
+![img2](./img_sql/sql2.png)
