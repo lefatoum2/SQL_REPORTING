@@ -1,5 +1,7 @@
 # SQL
 
+### UNION ALL/JOIN
+
 ![imgt](./img_sql/table1.png)
 
 ```sql
