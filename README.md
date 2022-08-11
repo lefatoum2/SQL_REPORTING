@@ -24,4 +24,4 @@ GROUP BY country
 -- Sort the results to show most events at the top
 ORDER BY events DESC;
 ```
-![img1](./img_sql/img1.png)
+![img1](./img_sql/sql1.png)
