@@ -1,5 +1,7 @@
 # SQL
 
+![imgt](./img_sql/table1.png)
+
 ```sql
 -- Query season, country, and events for all summer events
 SELECT 
