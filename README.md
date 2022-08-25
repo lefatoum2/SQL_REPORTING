@@ -80,3 +80,23 @@ FROM athletes;
 ```
 
 ![img3](./img_sql/Caseb141237.png)
+
+## CASE 2	
+
+```
+-- Pull in sport, bmi_bucket, and athletes
+SELECT 
+	sport,
+    -- Bucket BMI in three groups: <.25, .25-.30, and >.30	
+    CASE WHEN 100*weight/height^2 <.25 THEN '<.25'
+    WHEN 100*weight/height^2 <=.30 THEN '.25-.30'
+    WHEN 100*weight/height^2 >.30 THEN '>.30' END AS bmi_bucket,
+    COUNT(DISTINCT athlete_id) AS athletes
+FROM summer_games AS s
+JOIN athletes AS a
+ON s.athlete_id = a.id
+-- GROUP BY non-aggregated fields
+GROUP BY sport, bmi_bucket
+-- Sort by sport and then by athletes in descending order
+ORDER BY sport, athletes DESC;
+```
