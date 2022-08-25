@@ -69,7 +69,7 @@ ORDER BY events DESC;
 
 ![img3](./img_sql/Case140850.png)
 
-```
+```sql
 SELECT 
 	name,
     -- Output 'Tall Female', 'Tall Male', or 'Other'
@@ -84,7 +84,7 @@ FROM athletes;
 ## CASE 2	
 ![img4](./img_sql/case2a.png)
 ![img5](./img_sql/case2b.png)
-```
+```sql
 -- Pull in sport, bmi_bucket, and athletes
 SELECT 
 	sport,
