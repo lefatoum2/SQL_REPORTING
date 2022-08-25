@@ -67,7 +67,7 @@ ORDER BY events DESC;
 
 ## CASE 
 
-![](./img_sql/Case140850.png)
+![img3](./img_sql/Case140850.png)
 
 ```
 SELECT 
@@ -79,4 +79,4 @@ SELECT
 FROM athletes;
 ```
 
-![](./img_sql/Caseb141237.png)
+![img3](./img_sql/Caseb141237.png)
