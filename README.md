@@ -101,3 +101,4 @@ GROUP BY sport, bmi_bucket
 -- Sort by sport and then by athletes in descending order
 ORDER BY sport, athletes DESC;
 ```
+![img6](./img_sql/resultcase2.png)
