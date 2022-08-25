@@ -31,7 +31,7 @@ ORDER BY events DESC;
 ![img1](./img_sql/sql1.png)
 
 
-## Sub Requests
+## Sub Queries
 
 ```sql
 -- Add outer layer to pull season, country and unique events
