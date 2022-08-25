@@ -78,3 +78,5 @@ SELECT
     else 'Other' END AS segment
 FROM athletes;
 ```
+
+![](./img_sql/Caseb141237.png)
