@@ -73,8 +73,8 @@ ORDER BY events DESC;
 SELECT 
 	name,
     -- Output 'Tall Female', 'Tall Male', or 'Other'
-	CASE when gender = 'F' and height < 175 then 'Tall Female'
-    when gender = 'M' and height < 190 then 'Tall Male'
+	CASE when gender = 'F' and height <= 175 then 'Tall Female'
+    when gender = 'M' and height <= 190 then 'Tall Male'
     else 'Other' END AS segment
 FROM athletes;
 ```
