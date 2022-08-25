@@ -67,7 +67,7 @@ ORDER BY events DESC;
 
 ## CASE 
 
-![](./Case140850.png)
+![](./img_sql/Case140850.png)
 
 ```
 SELECT 
