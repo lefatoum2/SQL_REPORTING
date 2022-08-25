@@ -61,3 +61,18 @@ ORDER BY events DESC;
 ```
 
 ![img2](./img_sql/sql2.png)
+
+
+
+
+## CASE 
+
+```
+SELECT 
+	name,
+    -- Output 'Tall Female', 'Tall Male', or 'Other'
+	CASE when gender = 'F' and height < 175 then 'Tall Female'
+    when gender = 'M' and height < 190 then 'Tall Male'
+    else 'Other' END AS segment
+FROM athletes;
+```
