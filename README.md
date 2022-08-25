@@ -82,7 +82,8 @@ FROM athletes;
 ![img3](./img_sql/Caseb141237.png)
 
 ## CASE 2	
-
+![img4](./img_sql/case2a.png)
+![img5](./img_sql/case2b.png)
 ```
 -- Pull in sport, bmi_bucket, and athletes
 SELECT 
