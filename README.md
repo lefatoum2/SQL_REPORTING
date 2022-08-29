@@ -110,13 +110,19 @@ ORDER BY sport, athletes DESC;
 
 
 ```sql
-alter table table_name
-drop column column_name;
+ALTER TABLE table_name
+DROP COLUMN column_name;
 ```
 
 ```sql
 ALTER TABLE table_name
 RENAME COLUMN old_name TO new_name;
+```
+
+```sql
+insert into professors 
+SELECT DISTINCT firstname, lastname, university_shortname 
+FROM university_professors;
 ```
 
 
