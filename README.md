@@ -120,9 +120,9 @@ RENAME COLUMN old_name TO new_name;
 ```
 
 ```sql
-insert into professors 
-SELECT DISTINCT firstname, lastname, university_shortname 
-FROM university_professors;
+insert into players
+SELECT DISTINCT firstname, lastname, name_club
+FROM club_players;
 ```
 
 
