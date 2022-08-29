@@ -125,4 +125,7 @@ SELECT DISTINCT firstname, lastname, name_club
 FROM club_players;
 ```
 
+```
+drop table table_name;
+```
 
