@@ -120,7 +120,7 @@ RENAME COLUMN old_name TO new_name;
 ```
 
 ```sql
-insert into players
+INSERT INTO players
 SELECT DISTINCT firstname, lastname, name_club
 FROM club_players;
 ```
