@@ -107,3 +107,16 @@ ORDER BY sport, athletes DESC;
 ## Annexe
 
 ### Create table if not exists
+
+
+```sql
+alter table table_name
+drop column column_name;
+```
+
+```sql
+ALTER TABLE table_name
+RENAME COLUMN old_name TO new_name;
+```
+
+
