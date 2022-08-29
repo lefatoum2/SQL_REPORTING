@@ -108,23 +108,26 @@ ORDER BY sport, athletes DESC;
 
 ### Create table if not exists
 
-
+### Delete column
 ```sql
 ALTER TABLE table_name
 DROP COLUMN column_name;
 ```
 
+### Rename
 ```sql
 ALTER TABLE table_name
 RENAME COLUMN old_name TO new_name;
 ```
 
+### Insert
 ```sql
 INSERT INTO players
 SELECT DISTINCT firstname, lastname, name_club
 FROM club_players;
 ```
 
+### delete table
 ```sql
 DROP TABLE table_name;
 ```
