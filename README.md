@@ -126,6 +126,6 @@ FROM club_players;
 ```
 
 ```sql
-drop table table_name;
+DROP TABLE table_name;
 ```
 
