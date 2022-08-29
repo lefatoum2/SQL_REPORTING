@@ -102,3 +102,8 @@ GROUP BY sport, bmi_bucket
 ORDER BY sport, athletes DESC;
 ```
 ![img6](./img_sql/resultcase2.png)
+
+
+## Annexe
+
+### Create table if not exists
