@@ -103,6 +103,22 @@ ORDER BY sport, athletes DESC;
 ```
 ![img6](./img_sql/resultcase2.png)
 
+## IN 
+```sql
+-- Pull summer bronze_medals, silver_medals, and gold_medals
+SELECT 
+	sum(bronze) as bronze_medals, 
+    sum(silver) as silver_medals,
+    sum(gold) as gold_medals
+FROM summer_games
+-- Add the WHERE statement below
+WHERE athlete_id IN
+    -- Create subquery list for athlete_ids age 16 or below    
+    (SELECT id
+     FROM athletes
+     WHERE age <= 16);
+```
+![in_sql](in_sql.png)
 
 ## Annexe
 
