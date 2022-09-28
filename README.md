@@ -118,7 +118,7 @@ WHERE athlete_id IN
      FROM athletes
      WHERE age <= 16);
 ```
-![in_sql](in_sql.png)
+![in_sql](./img_sql/in_sql.png)
 
 ## Annexe
 
