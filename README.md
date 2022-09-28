@@ -120,6 +120,21 @@ WHERE athlete_id IN
 ```
 ![in_sql](./img_sql/in_sql.png)
 
+## LIKE
+
+```sql
+-- Pull event and unique athletes from summer_games 
+SELECT 
+	event, 
+    -- Add the gender field below
+    CASE when event LIKE '%Men%' then 'male'
+    ELSE 'female' END AS gender,
+    COUNT(DISTINCT athlete_id) AS athletes
+FROM summer_games
+GROUP BY event;
+```
+![like](./img_sql/like.png)
+
 ## Annexe
 
 ### Create table if not exists
