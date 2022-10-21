@@ -1,4 +1,5 @@
 # SQL
+![1_WzAocawnWDwywRrU3Yj6Lw](https://user-images.githubusercontent.com/73175706/197198622-eeda84b3-7472-417e-9c23-73784b403d8f.jpg)
 
 ### UNION ALL/JOIN
 
