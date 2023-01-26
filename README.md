@@ -164,7 +164,7 @@ FROM club_players;
 DROP TABLE table_name;
 ```
 
-### REJECT
+### INNER JOIN REJECT 
 
 ```sql
 SELECT A2.* FROM TableA A2 
