@@ -164,3 +164,16 @@ FROM club_players;
 DROP TABLE table_name;
 ```
 
+### REJECT
+
+```sql
+SELECT A2.* FROM TableA A2 
+             WHERE A2.my_id NOT IN 
+                       (Select tableA.my_id FROM 
+                                     tableA 
+                                     inner join 
+                                     tableB 
+                                     on tableA.my_id = tableB.my_id)
+```
+
+
