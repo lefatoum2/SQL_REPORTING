@@ -175,6 +175,19 @@ INSERT INTO client (prenom, nom, ville, age)
  ('Marielle', 'Ribeiro', 'Maillères', 27),
  ('Hilaire', 'Savary', 'Conie-Molitard', 58);
 ```
+
+### Create table 
+```sql
+CREATE TABLE sandbox.customers(
+ customer_id INT AUTO_INCREMENT PRIMARY KEY,
+ customer_name varchar(255) NOT NULL
+    );
+    
+CREATE TABLE sandbox.customer_country(
+ customer_id INT PRIMARY KEY,
+ customer_country varchar(255) NOT NULL
+    );
+```
 ### Delete table
 ```sql
 DROP TABLE table_name where condition;
@@ -186,6 +199,7 @@ UPDATE table
 SET nom_colonne_1 = 'nouvelle valeur'
 WHERE condition
 ```
+
 ### INNER JOIN REJECT 
 
 ```sql
