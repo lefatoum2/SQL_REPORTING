@@ -154,16 +154,38 @@ RENAME COLUMN old_name TO new_name;
 
 ### Insert
 ```sql
+INSERT INTO table VALUES ('valeur 1', 'valeur 2', ...)
+```
+
+```sql
 INSERT INTO players
 SELECT DISTINCT firstname, lastname, name_club
 FROM club_players;
 ```
-
-### Delete table
 ```sql
-DROP TABLE table_name;
+INSERT INTO table (nom_colonne_1, nom_colonne_2, ...
+ VALUES ('valeur 1', 'valeur 2', ...)
 ```
 
+```sql
+INSERT INTO client (prenom, nom, ville, age)
+ VALUES
+ ('Rébecca', 'Armand', 'Saint-Didier-des-Bois', 24),
+ ('Aimée', 'Hebert', 'Marigny-le-Châtel', 36),
+ ('Marielle', 'Ribeiro', 'Maillères', 27),
+ ('Hilaire', 'Savary', 'Conie-Molitard', 58);
+```
+### Delete table
+```sql
+DROP TABLE table_name where condition;
+```
+### Update
+
+```
+UPDATE table
+SET nom_colonne_1 = 'nouvelle valeur'
+WHERE condition
+```
 ### INNER JOIN REJECT 
 
 ```sql
