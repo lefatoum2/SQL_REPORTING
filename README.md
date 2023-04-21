@@ -370,7 +370,17 @@ GROUP BY
   DATE_TRUNC('month', date),
   category;
 ```
-
+```sql
+SELECT 
+  category, 
+  month, 
+  total_sales
+FROM 
+  monthly_sales_summary
+ORDER BY 
+  category, 
+  month;
+```
 
 
 
