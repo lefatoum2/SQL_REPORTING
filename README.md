@@ -213,3 +213,165 @@ SELECT A2.* FROM TableA A2
 ```
 
 
+## Advanced SQL
+
+### Window Functions
+```sql
+SELECT order_id, customer_id, order_date, order_amount,
+  SUM(order_amount) OVER (
+    PARTITION BY customer_id
+    ORDER BY order_date
+    ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
+  ) AS running_total
+FROM orders;
+```
+
+### Common Table Expressions (CTEs)
+```sql
+WITH department_avg_salary AS (
+  SELECT department_id, AVG(salary) AS avg_salary
+  FROM employees
+  GROUP BY department_id
+)
+
+SELECT employee_id, employee_name, salary, department_avg_salary.avg_salary
+FROM employees
+INNER JOIN department_avg_salary ON employees.department_id = department_avg_salary.department_id
+WHERE salary > department_avg_salary.avg_salary;
+```
+
+### Aggregate Functions
+```sql
+SELECT 
+  product_id, 
+  AVG(sale_amount) AS avg_sale_amount, 
+  SUM(sale_amount) AS total_sale_amount, 
+  region, 
+  RANK() OVER (PARTITION BY region ORDER BY SUM(sale_amount) DESC) AS rank
+FROM sales
+GROUP BY product_id, region;
+```
+### Pivot Tables
+```sql
+SELECT 
+  customer_id, 
+  [1] AS Product1, 
+  [2] AS Product2, 
+  [3] AS Product3, 
+  [4] AS Product4, 
+  [5] AS Product5
+FROM (
+  SELECT 
+    customer_id, 
+    product_id, 
+    order_quantity
+  FROM orders
+) p
+PIVOT (
+  SUM(order_quantity)
+  FOR product_id IN ([1], [2], [3], [4], [5])
+) AS pvt;
+```
+### Subqueries
+```sql
+SELECT 
+  e.first_name, 
+  e.last_name, 
+  e.department_id, 
+  s.salary
+FROM 
+  employees e 
+  INNER JOIN salaries s ON e.employee_id = s.employee_id 
+  INNER JOIN (
+    SELECT 
+      department_id, 
+      MAX(salary) AS max_salary
+    FROM 
+      salaries
+    GROUP BY 
+      department_id
+  ) m ON s.department_id = m.department_id AND s.salary = m.max_salary;
+```
+
+### Cross Joins
+```sql
+SELECT 
+  c.customer_id, 
+  c.customer_name, 
+  c.city, 
+  COUNT(o.order_id) AS order_count
+FROM 
+  customers c 
+  CROSS JOIN (
+    SELECT DISTINCT 
+      city
+    FROM 
+      customers
+  ) cities 
+  LEFT JOIN orders o ON c.customer_id = o.customer_id
+WHERE 
+  c.city = cities.city
+GROUP BY 
+  c.customer_id, 
+  c.customer_name, 
+  c.city;
+```
+### Temporary Tables
+```sql
+CREATE TEMPORARY TABLE monthly_sales_summary (
+  month DATE,
+  category VARCHAR(50),
+  total_sales DECIMAL(10,2)
+);
+```
+
+```sql
+INSERT INTO monthly_sales_summary (month, category, total_sales)
+SELECT 
+  DATE_TRUNC('month', date) AS month,
+  category,
+  SUM(sales_amount) AS total_sales
+FROM 
+  sales
+WHERE 
+  date >= DATE_TRUNC('year', CURRENT_DATE) -- sales from the past year
+GROUP BY 
+  DATE_TRUNC('month', date),
+  category;
+```
+```sql
+SELECT 
+  s.category, 
+  mss.month, 
+  mss.total_sales
+FROM 
+  sales s 
+  JOIN monthly_sales_summary mss 
+    ON s.category = mss.category 
+    AND DATE_TRUNC('month', s.date) = mss.month
+WHERE 
+  s.date >= DATE_TRUNC('year', CURRENT_DATE) -- sales from the past year
+ORDER BY 
+  s.category, 
+  mss.month;
+```
+### Materialized Views
+```sql
+CREATE MATERIALIZED VIEW monthly_sales_summary AS 
+SELECT 
+  DATE_TRUNC('month', date) AS month,
+  category,
+  SUM(sales_amount) AS total_sales
+FROM 
+  sales
+WHERE 
+  date >= DATE_TRUNC('year', CURRENT_DATE) -- sales from the past year
+GROUP BY 
+  DATE_TRUNC('month', date),
+  category;
+```
+
+
+
+
+
