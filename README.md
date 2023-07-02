@@ -382,6 +382,32 @@ ORDER BY
   month;
 ```
 
+### COALESCE
+https://learnsql.com/blog/coalesce-function-sql/
+```sql
+SELECT
+   product ||' - '||
+   COALESCE(subcategory, category, family, 'no product description ')
+   AS product_and_subcategory
+FROM stock
+```
+
+```sql
+SELECT product,
+  COALESCE(subcategory,'No Subcategory') AS subcategory,
+  COALESCE(category,'No Category') AS category,
+  COALESCE(family,'No Family') AS family
+FROM stock
+```
+
+```sql
+SELECT product,
+  quantity_available,
+  minimum_to_have,
+  COALESCE(minimum_to_have, quantity_available * 0.5) AS threshold
+FROM   stock
+```
+
 
 
 
