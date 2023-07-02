@@ -391,7 +391,7 @@ SELECT
    AS product_and_subcategory
 FROM stock
 ```
-
+![img31](./img_sql/sql_coalesce1.png)
 ```sql
 SELECT product,
   COALESCE(subcategory,'No Subcategory') AS subcategory,
@@ -399,7 +399,7 @@ SELECT product,
   COALESCE(family,'No Family') AS family
 FROM stock
 ```
-
+![img32](./img_sql/sql_coalesce3.png)
 ```sql
 SELECT product,
   quantity_available,
@@ -407,7 +407,7 @@ SELECT product,
   COALESCE(minimum_to_have, quantity_available * 0.5) AS threshold
 FROM   stock
 ```
-
+![img33](./img_sql/sql_coalesce2.png)
 
 
 
