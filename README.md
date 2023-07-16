@@ -410,4 +410,11 @@ FROM   stock
 ![img33](./img_sql/sql_coalesce2.png)
 
 
-
+### Having
+La condition HAVING en SQL est presque similaire à WHERE à la seule différence que HAVING permet de filtrer en utilisant des fonctions telles que SUM(), COUNT(), AVG(), MIN() ou MAX().
+```sql
+SELECT colonne1, SUM(colonne2)
+FROM nom_table
+GROUP BY colonne1
+HAVING fonction(colonne2) operateur valeur
+```
